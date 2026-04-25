@@ -54,6 +54,6 @@ vim.keymap.set('n', '<Leader>tn', ':tabnew<CR>', { noremap = true, silent = true
 
 -- for windows use
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    vim.o.shell = "powershell.exe"
+    vim.o.shell = "pwsh.exe"
 end
 

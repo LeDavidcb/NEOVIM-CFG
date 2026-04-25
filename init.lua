@@ -1,3 +1,2 @@
-require("lazyInstall")
 require("core")
-
+require("packcmd")
