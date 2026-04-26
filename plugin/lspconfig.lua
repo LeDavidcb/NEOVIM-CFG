@@ -25,5 +25,5 @@ vim.lsp.enable({
     -- "cssls",
     -- "gopls",
     -- "svelte",
-    -- "rust_analyzer",
+    "rust_analyzer",
 })
