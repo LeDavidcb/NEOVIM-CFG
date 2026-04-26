@@ -23,6 +23,7 @@ vim.opt.updatetime = 50
 vim.opt.listchars:append("eol:↴")
 vim.opt.list = true
 vim.o.autoread = true
+vim.opt.undofile = true
 
 -- Automatically reload files changed outside Neovim
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
@@ -56,4 +57,3 @@ vim.keymap.set('n', '<Leader>tn', ':tabnew<CR>', { noremap = true, silent = true
 if vim.loop.os_uname().sysname == "Windows_NT" then
     vim.o.shell = "pwsh.exe"
 end
-
