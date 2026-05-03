@@ -30,10 +30,10 @@ end
 
 local function format_on_save(ev)
     vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = ev.buf,
-      callback = function()
-        vim.lsp.buf.format({ bufnr = ev.buf })
-      end,
+        buffer = ev.buf,
+        callback = function()
+            vim.lsp.buf.format({ bufnr = ev.buf })
+        end,
     })
 end
 
@@ -46,7 +46,7 @@ function M.on_attach(ev)
 
     set_lsp_keymaps(ev.buf)
     format_on_save(ev)
-    
+
     if client.name == "gopls" then
         client.server_capabilities.semanticTokensProvider = nil
     end

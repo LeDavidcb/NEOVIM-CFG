@@ -1,9 +1,9 @@
 vim.pack.add({
-    "http://github.com/saghen/blink.lib",
-    "http://github.com/saghen/blink.cmp" 
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
 })
-
 local cmp = require('blink.cmp')
+
+
 cmp.setup({
         keymap = {
             preset = "enter",
@@ -13,5 +13,5 @@ cmp.setup({
         signature = { enabled = true },
         completion = { documentation = { auto_show = true, auto_show_delay_ms = 200 } },
         sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-        fuzzy = { implementation = "lua" },
+        fuzzy = { implementation = "rust" },
 })
