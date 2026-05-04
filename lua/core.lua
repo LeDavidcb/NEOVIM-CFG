@@ -57,3 +57,11 @@ vim.keymap.set('n', '<Leader>tn', ':tabnew<CR>', { noremap = true, silent = true
 if vim.loop.os_uname().sysname == "Windows_NT" then
     vim.o.shell = "pwsh.exe"
 end
+
+-- new UI
+require("vim._core.ui2").enable({})
+
+-- Loader
+if vim.loader then
+    vim.loader.enable()
+end
