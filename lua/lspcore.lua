@@ -1,6 +1,6 @@
 local M = {}
 
-local function set_lsp_keymaps(bufnr)
+            local function set_lsp_keymaps(bufnr)
     local map = function(lhs, rhs, desc)
         vim.keymap.set("n", lhs, rhs, {
             buffer = bufnr,
@@ -28,14 +28,6 @@ local function set_lsp_keymaps(bufnr)
     end, "LSP references")
 end
 
-local function format_on_save(ev)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = ev.buf,
-        callback = function()
-            vim.lsp.buf.format({ bufnr = ev.buf })
-        end,
-    })
-end
 
 function M.on_attach(ev)
     local client_id = ev.data and ev.data.client_id
@@ -45,7 +37,6 @@ function M.on_attach(ev)
     end
 
     set_lsp_keymaps(ev.buf)
-    format_on_save(ev)
 
     if client.name == "gopls" then
         client.server_capabilities.semanticTokensProvider = nil
